@@ -77,6 +77,7 @@ header nav ul li {
 	font-weight: 700;
 	font-size: .875em;
 	padding: 0 10px;
+	list-style: none;
 
 }
 header nav ul li a{
@@ -92,6 +93,10 @@ header nav ul li a{
 	justify-content: center;
 	align-items: center;
 	flex-flow: row wrap;
+}
+
+.bottom-section {
+	border-top: 1px solid #eee;
 }
 
 .main-image {
@@ -120,18 +125,14 @@ header nav ul li a{
 .section-two,
 .section-three {
 	height: auto;
-	width: 100%
-
+	flex-basis: 100%;
 }
 
 .section-one h3 {
 	padding: 10px 0;
 }
 
-.section-two {
-	border-top: 1px solid #eee;
-	border-bottom: 1px solid #eee;
-}
+
 
 .section-two h3,
 .section-three h3 {
@@ -181,4 +182,40 @@ footer span {
 	text-transform: lowercase;
 	color: #77a466;
 	font-size: .875em;
+}
+
+@media all and (min-width:768px) {
+    /* Tablet styles here */
+		.bottom-section {
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+
+		.section-one,
+		.section-two,
+		.section-three {
+			flex-basis: 30%;
+		}
+
+		.section-two		 {
+			border-left: 1px solid #eee;
+			border-right: 1px solid #eee;
+			padding: 0 15px;
+		}
+
+}
+
+@media all and (min-width:1200px) {
+    /* Desktop styles here */
+		header {
+			flex-flow: row;
+			justify-content: space-between;
+		}
+
+		header nav ul {
+			display: flex;
+			flex-flow: row;
+			margin: 0;
+			padding: 0;
+		}
 }
